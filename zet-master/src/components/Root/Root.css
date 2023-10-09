@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat';
+}
+
+/* TODO: Get rid of the important here. */
+input {
+  font-family: 'Montserrat' !important;
+}
+
+.container {
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+
+  &.full-screen-mode {
+    position: fixed;
+    z-index: 2147483647;
+    display: flex;
+    justify-content: center;
+    padding-top: 128px;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+
+    .popup {
+      width: 800px;
+      max-width: 90vw;
+    }
+
+    &.visible {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &.embed {
+    width: 50vw;
+
+    .popup {
+      max-width: 90%;
+    }
+  }
+
+  &.visible {
+    .popup {
+      opacity: 1;
+    }
+  }
+
+  .popup {
+    align-self: flex-start;
+    box-shadow: 20px 36px 36px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    border: 1px solid lightgray;
+    background-color: #ffffff;
+    padding: 12px;
+    opacity: 0;
+    overflow: hidden;
+    transition-property: opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    transition-delay: 0.1s;
+
+    .results-section-visible {
+      border-bottom: 1px solid lightgray;
+      padding-bottom: 12px;
+    }
+  }
+}
+
+.unstyled-anchor-tag {
+  &:link,
+  &:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.truncate-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+kbd {
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.1em 0.5em;
+  margin: 0 0.2em;
+  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
+  background-color: #f7f7f7;
+  /* 😏 nice */
+  color: #696969;
+}
