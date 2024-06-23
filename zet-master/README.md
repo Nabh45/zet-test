@@ -28,7 +28,7 @@ _Show currently and recently audible tabs_
 Clone the repo.
 In the root of the cloned repo run the following commands,
 
-`npm install`
+`npm install --save-dev webpack@latest webpack-cli@latest`
 
 `npm run watch` This will keep the files in _dist_ directory updated.
 
